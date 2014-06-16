@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" itemscope="itemscope" itemtype="http://schema.org/Product">
+<html lang="en">
 {% include '../includes/head.html' %}
 
 <body class="skin-blue">
@@ -8,11 +8,11 @@
             data-ng-include="'/public/system/views/header.html'"
             data-role="navigation"></header>
 
-    <section class="content">
-        <section class="container">
+
+        <div>
             {% block content %}{% endblock %}
-        </section>
-    </section>
+        </div>
+
     {% include '../includes/foot.html' %}
 </body>
 
