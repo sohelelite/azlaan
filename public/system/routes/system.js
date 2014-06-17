@@ -32,11 +32,23 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
             $stateProvider              
                 .state('home', {
                     url: '/',
+                    views:{
+                        ''          : { templateUrl: 'public/system/views/index.html' },
+                        'menu@home' : { templateUrl: 'public/system/views/includes/menu.html' }
+                    },
+                    resolve:{
+                        loggedin : checkLoggedin
+                    }
+                })
+
+                .state('admin',{
+                    url : '/admin',
                     templateUrl: 'public/system/views/index.html',
                     resolve:{
                         loggedin : checkLoggedin
                     }
                 })
+
                 .state('auth', {
                     templateUrl: 'public/auth/views/index.html'
                 });

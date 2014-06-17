@@ -1,6 +1,6 @@
 <div class="wrapper row-offcanvas row-offcanvas-left" data-ng-controller="IndexController">
 
-    <aside class="left-side sidebar-offcanvas">
+    <aside class="left-side sidebar-offcanvas" ui-view="menu">
 
     </aside><!-- /.right-side -->
 
@@ -9,7 +9,9 @@
         <section class="content-header">
             <h1>
                 Blank page
-                <small>it all starts here</small>
+                <small>
+                    it all starts here <a href="#" tooltip-placement="right" tooltip="On the Right!">right</a>
+                </small>
             </h1>
         </section>
 
