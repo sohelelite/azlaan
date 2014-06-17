@@ -49,6 +49,30 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
                     }
                 })
 
+                .state('create',{
+                    url: '/admin/:formName/create',
+                    views:{
+                        ''                  : { templateUrl: 'public/system/views/index.html' },
+                        'menu@create'       : { templateUrl: 'public/system/views/includes/menu.html' },
+                        'content@create'    : { templateUrl: 'public/system/views/create.html' }
+                    },
+                    resolve:{
+                        loggedin : checkLoggedin
+                    }
+                })
+
+                .state('list',{
+                    url: '/admin/:formListName/list',
+                    views:{
+                        ''                  : { templateUrl: 'public/system/views/index.html' },
+                        'menu@create'       : { templateUrl: 'public/system/views/includes/menu.html' },
+                        'content@create'    : { templateUrl: 'public/system/views/list.html' }
+                    },
+                    resolve:{
+                        loggedin : checkLoggedin
+                    }
+                })
+
                 .state('auth', {
                     templateUrl: 'public/auth/views/index.html'
                 });
