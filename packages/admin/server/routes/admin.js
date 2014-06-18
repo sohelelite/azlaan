@@ -1,8 +1,10 @@
 'use strict';
 
-// The Package is past automatically as first parameter
-module.exports = function(Admin, app, auth, database) {
+var forms = require('../controllers/forms');
 
+module.exports = function(Admin, app, auth) {
+
+    /*
     app.get('/admin/example/anyone', function(req, res, next) {
         res.send('Anyone can access this');
     });
@@ -23,4 +25,15 @@ module.exports = function(Admin, app, auth, database) {
             res.send(html);
         });
     });
+    */
+
+    app.route('/forms')
+        .get(forms.all)
+        .post(forms.create);
+
+    app.get('/forms/:name', function (req, res) {
+        var name = req.params.name;
+        forms.formByName(req, res, name);
+    });
+
 };
