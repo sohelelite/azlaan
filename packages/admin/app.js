@@ -46,5 +46,9 @@ Admin.register(function(app, auth, database) {
     });
     */
 
+    Admin.aggregateAsset('css', 'admin.css');
+    Admin.aggregateAsset('css', 'ionicons.css');
+    Admin.aggregateAsset('js', 'plugins.js', {global:true});
+
     return Admin;
 });

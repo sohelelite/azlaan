@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.system').controller('MenuController', ['$scope',
+angular.module('mean.admin').controller('MenuController', ['$scope',
     function ($scope) {
 
         /* Sidebar tree view */

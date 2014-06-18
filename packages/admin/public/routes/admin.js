@@ -24,20 +24,32 @@ angular.module('mean.admin').config(['$stateProvider', '$urlRouterProvider',
         };
 
         // For unmatched routes:
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/admin');
 
 
         $stateProvider
-        .state('index',{
-           url : '/admin/index',
-           templateUrl: 'admin/views/index.html',
+        .state('admin',{
+           url : '/admin',
+            views:
+            {
+                ''              : { templateUrl: 'admin/views/index.html' },
+                'menu@admin'    : { templateUrl: 'admin/views/includes/menu.html' }
+            },
             resolve:{
                 loggedin : checkLoggedin
             }
         })
-        .state('admin example page', {
-            url: '/admin/example',
-            templateUrl: 'admin/views/index.html'
+
+        .state('create',{
+            url: '/admin/:formName/create',
+            views:{
+                ''                  : { templateUrl: 'admin/views/index.html' },
+                'menu@create'       : { templateUrl: 'admin/views/includes/menu.html' },
+                'content@create'    : { templateUrl: 'admin/views/includes/create.html' }
+            },
+            resolve:{
+                loggedin : checkLoggedin
+            }
         });
     }
 ]);

@@ -1,9 +1,9 @@
 {
     "name": "admin",
     "version": "0.0.1",
-    "description": "Some description of admin",
+    "description": "Administrator Module",
     "author": {
-        "name": "mean scaffold"
+        "name": "Sohel Shaikh <sohel.shaikh.s@gmail.com>"
     },
     "mean": "0.3.3",
     "engines": {

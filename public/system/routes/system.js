@@ -26,47 +26,16 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
 
 
             // For unmatched routes:
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/admin');
 
             // states for my app
             $stateProvider              
                 .state('home', {
                     url: '/',
-                    views:{
-                        ''          : { templateUrl: 'public/system/views/index.html' },
-                        'menu@home' : { templateUrl: 'public/system/views/includes/menu.html' }
-                    },
-                    resolve:{
-                        loggedin : checkLoggedin
-                    }
-                })
-
-                .state('admin',{
-                    url : '/admin',
-                    templateUrl: 'public/system/views/index.html',
-                    resolve:{
-                        loggedin : checkLoggedin
-                    }
-                })
-
-                .state('create',{
-                    url: '/admin/:formName/create',
-                    views:{
-                        ''                  : { templateUrl: 'public/system/views/index.html' },
-                        'menu@create'       : { templateUrl: 'public/system/views/includes/menu.html' },
-                        'content@create'    : { templateUrl: 'public/system/views/create.html' }
-                    },
-                    resolve:{
-                        loggedin : checkLoggedin
-                    }
-                })
-
-                .state('list',{
-                    url: '/admin/:formListName/list',
-                    views:{
-                        ''                  : { templateUrl: 'public/system/views/index.html' },
-                        'menu@create'       : { templateUrl: 'public/system/views/includes/menu.html' },
-                        'content@create'    : { templateUrl: 'public/system/views/list.html' }
+                    views:
+                    {
+                        ''          : { templateUrl: 'admin/views/index.html' },
+                        'menu@home' : { templateUrl: 'admin/views/includes/menu.html' }
                     },
                     resolve:{
                         loggedin : checkLoggedin
